@@ -719,3 +719,99 @@ body.modal-open{overflow:hidden;}
 @media (prefers-color-scheme: light) and (max-width:700px), (prefers-color-scheme: light) and (max-device-width:700px){
   .mobile-telegram{box-shadow:0 7px 20px rgba(13,105,255,.18),inset 0 1px 0 rgba(255,255,255,.22)}
 }
+
+/* v61 — FINAL LIGHT MODE FIX + MOBILE HEADER/FOOTER POLISH */
+@media (prefers-color-scheme: light){
+  html{background:#f4f7fb!important;color-scheme:light!important}
+  body{background:linear-gradient(180deg,#f8fbff 0%,#f3f7fc 55%,#edf2f8 100%)!important;color:#17253a!important}
+
+  /* Header */
+  .site-header{background:rgba(248,251,255,.94)!important;border-bottom:1px solid rgba(42,67,100,.10)!important;box-shadow:0 5px 24px rgba(40,65,95,.07)!important}
+  .logo-text{color:#17253a!important}.brand-sub{color:#718198!important}
+  .mobile-menu-toggle{background:#fff!important;border-color:rgba(42,67,100,.15)!important}
+  .mobile-menu-toggle span{background:#263950!important}
+
+  /* Hero / headings */
+  .hero h1,.section-heading h2,.reviews-heading h2,.product-card h3,.benefit h3,.step-item b,.help-card b{color:#17253a!important}
+  .hero-lead,.section-heading p,.reviews-heading p,.product-desc,.product-card ul,.benefit p,.step-item small,.help-card p{color:#617189!important}
+  .eyebrow{background:#edf4ff!important;color:#48627f!important;border-color:rgba(37,121,240,.18)!important}
+  .hero h1 span{color:#086cf2!important}
+  .secondary-btn{background:#fff!important;color:#2d4058!important;border-color:rgba(42,67,100,.14)!important}
+
+  /* CERTIFICATE CARDS — force readable light surfaces */
+  .cards-grid.certs .product-card,
+  article.product-card,
+  .product-card{background:linear-gradient(145deg,#ffffff,#f3f7fc)!important;color:#17253a!important;border-color:rgba(42,67,100,.13)!important;box-shadow:0 14px 40px rgba(35,55,85,.08)!important}
+  .cards-grid.certs .product-card h3,
+  .product-card h3{color:#17253a!important;text-shadow:none!important}
+  .cards-grid.certs .product-card p,
+  .product-card .product-desc{color:#617189!important;text-shadow:none!important}
+  .cards-grid.certs .product-card ul,
+  .product-card ul{color:#617189!important}
+  .cards-grid.certs .product-card li{color:#617189!important}
+  .cards-grid.certs .product-card li:before{color:#247cf2!important}
+  .cards-grid.certs .price{color:#17253a!important}
+  .cards-grid.certs .card-btn{background:#eaf3ff!important;color:#176fd2!important;border-color:rgba(37,121,240,.20)!important}
+  .cards-grid.certs .card-btn:hover{background:#1375f7!important;color:#fff!important}
+  .product-icon{background:#edf5ff!important;color:#1678f5!important;border-color:rgba(56,132,255,.20)!important}
+  .product-icon.purple,.icon-super{background:#f1eaff!important;color:#7842d3!important;border-color:rgba(123,67,214,.20)!important}
+  .popular{background:#197dff!important;color:#fff!important}
+  .product-card.featured{border-color:#1977ff!important}
+
+  /* Benefits / how-to */
+  .benefits{background:linear-gradient(145deg,#fff,#f4f8fc)!important;color:#17253a!important;border-color:rgba(42,67,100,.12)!important}
+  .benefit{border-color:rgba(42,67,100,.08)!important}
+  .step-item>span{background:#eef6ff!important;color:#1678f5!important;border-color:#1878ff!important}
+  .help-card{background:linear-gradient(145deg,#edf6ff,#eaf1fb)!important;border-color:rgba(50,132,255,.22)!important}
+
+  /* Reviews / FAQ */
+  .review,.reviews-row .review{background:#fff!important;color:#17253a!important;border-color:rgba(42,67,100,.11)!important;box-shadow:0 12px 34px rgba(35,55,85,.06)!important}
+  .review-top b,.review-name{color:#17253a!important}.review-top small,.review-meta{color:#8290a3!important}.review p,.review-text{color:#617189!important}
+  .faq-list details,.faq-item{background:#fff!important;color:#23344b!important;border-color:rgba(42,67,100,.11)!important}
+  .faq-list summary,.faq-question{color:#23344b!important}
+  .faq-list details p,.faq-answer{color:#617189!important}
+
+  /* Footer */
+  .site-footer{background:#edf2f8!important;border-top-color:rgba(42,67,100,.10)!important}
+  .footer-brand b{color:#17253a!important}.footer-brand small{color:#718198!important}
+  .footer-nav,.footer-warranty-btn{color:#617189!important}.footer-nav a:hover,.footer-warranty-btn:hover{color:#17253a!important}
+  .footer-bottom{color:#6a7a90!important;border-top-color:rgba(42,67,100,.08)!important}
+
+  /* Warranty / all modals */
+  .modal,.info-modal{background:rgba(218,227,239,.76)!important}
+  .modal-content,.info-modal-content,.warranty-modal-content{background:#fff!important;color:#52647b!important}
+  .warranty-text,.warranty-text p,.warranty-text li{color:#5d6d81!important}
+  .warranty-text strong{color:#17253a!important}.warranty-text em{color:#397dcc!important}.warranty-text a{color:#176fd1!important}
+}
+
+/* v61 mobile — never hide the Telegram CTA and center the footer brand */
+@media (max-width:700px), (max-device-width:700px){
+  .site-header{height:64px!important;overflow:visible!important}
+  .header-content{height:64px!important;width:100%!important;padding:0 14px!important;display:flex!important;align-items:center!important;gap:8px!important}
+  .brand{flex:1 1 auto!important;min-width:0!important;display:flex!important;align-items:center!important}
+
+  .site-header .mobile-telegram{
+    display:inline-flex!important;visibility:visible!important;opacity:1!important;
+    align-items:center!important;justify-content:center!important;flex:0 0 auto!important;
+    height:38px!important;min-width:91px!important;padding:0 13px!important;
+    border-radius:999px!important;color:#fff!important;
+    background:linear-gradient(135deg,#268aff,#0967f5)!important;
+    border:1px solid rgba(130,190,255,.28)!important;
+    box-shadow:0 7px 22px rgba(13,105,255,.24),inset 0 1px 0 rgba(255,255,255,.16)!important;
+    font-size:11px!important;font-weight:750!important;white-space:nowrap!important;
+  }
+  .site-header .mobile-telegram span{font-size:11px!important;color:#fff!important}
+  .site-header .mobile-menu-toggle{display:flex!important;flex:0 0 44px!important}
+
+  /* Footer: logo, iPAWORLD and subtitle truly centered */
+  .site-footer .footer-inner{width:100%!important;padding:24px 14px 20px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;gap:17px!important}
+  .site-footer .footer-brand{width:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;gap:8px!important;margin:0 auto!important}
+  .site-footer .footer-brand img{display:block!important;width:38px!important;height:38px!important;margin:0 auto!important}
+  .site-footer .footer-brand>div{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;margin:0 auto!important}
+  .site-footer .footer-brand b{display:block!important;width:100%!important;text-align:center!important;font-size:17px!important;line-height:1.2!important;margin:0!important}
+  .site-footer .footer-brand small{display:block!important;width:100%!important;text-align:center!important;font-size:9px!important;line-height:1.4!important;margin:3px 0 0!important}
+  .site-footer .footer-nav{width:100%!important;display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;text-align:center!important;gap:12px 18px!important;margin:0!important}
+  .site-footer .footer-warranty-btn{font-size:10px!important}
+  .site-footer .footer-inner>.telegram-top{display:inline-flex!important;align-items:center!important;justify-content:center!important;margin:0!important;padding:11px 19px!important;border-radius:999px!important;color:#fff!important;background:linear-gradient(135deg,#268aff,#0967f5)!important;font-size:11px!important;font-weight:750!important;box-shadow:0 8px 26px rgba(13,105,255,.24)!important}
+  .site-footer .footer-bottom{width:calc(100% - 28px)!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;gap:5px!important}
+}
