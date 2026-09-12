@@ -1,0 +1,262 @@
+// Находим кнопку с вопросом и меню
+const helpBubble = document.querySelector('.help-bubble');
+const helpMenu = document.getElementById('helpMenu');
+
+// Находим элементы модального окна с информацией
+const infoModal = document.getElementById('infoModal');
+const infoModalTitle = document.getElementById('infoModalTitle');
+const infoModalText = document.getElementById('infoModalText');
+const infoModalCloseBtn = document.querySelector('.info-modal-close-btn');
+
+// Находим все кнопки в меню помощи
+const helpMenuButtons = document.querySelectorAll('.help-menu-btn');
+
+// Данные для модальных окон
+const infoContent = {
+    'certificate': {
+        title: '🔐 Что такое Сертификат?',
+        text: 'Сертификат — это специальное программное обеспечение для вашего <strong>iOS-устройства</strong>, которое открывает доступ к установке <strong>сторонних приложений и игр</strong> из альтернативных источников, помимо App Store.<br><br>Вы можете <strong>безопасно</strong> загружать нужные вам приложения:<br><ul><li>📲 не нарушая при этом никаких <strong>правил</strong> и <strong>законов</strong>;</li><li>🛡️ сохраняя <strong>полную безопасность</strong> ваших данных и устройства.</li></ul><br>Это надежный способ получить больше свободы без риска!'
+    },
+    'get-certificate': {
+        title: 'Инструкция по установке сертификата',
+        text: `
+            <div class="step-container">
+                <div class="step" data-step-id="1">
+                    <strong>Как получить сертификат в боте.</strong>
+                    <p>Отправляете <strong>/start</strong> боту. Нажимаете на кнопку "Проверить UDID". После сообщения "Отправьте UDID", вам нужно отправить свой UDID, который вы указывали при оплате сертификата. Нажимаете на кнопку "Получить сертификат [Имя вашего сертификата]". Бот пришлет вам два файла вашего сертификата - <strong>P12</strong> и <strong>Mobileprovision</strong>, а также ссылки для быстрой установки вашего сертификата.</p>
+                    <div class="step-buttons">
+                        <button class="next-step-btn">Следующий шаг</button>
+                    </div>
+                </div>
+                <div class="step hidden" data-step-id="2">
+                    <strong>Как сохранить сертификат на устройство.</strong>
+                    <p>Когда бот прислал вам два файла сертификата, то вам нужно нажать на один из них. В открывшемся окне нажмите на кнопку, расположенную сверху.</p>
+                    <img src="https://github.com/viibbee/Info/blob/main/cert1.png?raw=true" alt="Шаг 1">
+                    <div class="step-buttons">
+                        <button class="prev-step-btn">Предыдущий шаг</button>
+                        <button class="next-step-btn">Следующий шаг</button>
+                    </div>
+                </div>
+                <div class="step hidden" data-step-id="3">
+                    <p>У вас снова откроется окно, в нем выберите кнопку "Сохранить в файлы". Выберите место для сохранения сертификата.</p>
+                    <img src="https://github.com/viibbee/Info/blob/main/cert2.png?raw=true" alt="Шаг 2">
+                    <p>Нажмите на кнопку "Сохранить" слева вверху. Повторите для второго файла сертификата.</p>
+                    <div class="step-buttons">
+                        <button class="prev-step-btn">Предыдущий шаг</button>
+                        <button class="close-modal-btn">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        `
+    },
+    'scarlet': {
+        title: 'Как установить Scarlet?',
+        text: 'Инструкция по установке Scarlet: Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.'
+    },
+    'gbox': {
+        title: 'Как установить Gbox?',
+        text: 'Инструкция по установке Gbox: Maecenas sed diam eget risus varius blandit sit amet non magna.'
+    },
+    'esign': {
+        title: 'Как установить ESign?',
+        text: 'Инструкция по установке ESign: Donec id elit non mi porta gravida at eget metus.'
+    },
+   // ⚠️ Обновлено под ваш текст + кнопка Пользовательского соглашения
+'warranty': {
+    title: 'Условия гарантии',
+    text: `
+      <p><strong>Покупая сертификат вы соглашаетесь с нашими условиями!</strong></p>
+
+      <p><strong>1. Гарантия на сертификаты:</strong></p>
+      <ul>
+        <li><strong>Бюджетный сертификат</strong> — 1 месяц</li>
+        <li><strong>Моментальный сертификат</strong> — 3 месяца</li>
+        <li><strong>Супермоментальный</strong> — 6 месяцев</li>
+        <li><strong>Парный сертификат</strong> — 1 месяц</li>
+      </ul>
+
+      <p>Если у вас слетел ваш сертификат, то по условиям гарантии мы возвращаем вам тот же сертификат, который вы покупали, гарантия действует в течение всего срока! Замены производятся моментально! Срок отчитывается от дня регистрации.</p>
+
+      <p><strong>Выше написанные условия гарантии вступают в силу с 01.07.2026!</strong></p>
+
+      <p><em>Важно! — сертификаты зарегистрированные с 17.09.25 по 30.06.26 имеют другие условия гарантии.</em></p>
+
+      <p>Возврат или частичное возмещение каких-либо сборов, уплаченных по настоящему Соглашению, или любых других сборов не будет производиться ни по какой причине. Покупая сертификат вы должны понимать то, что установка приложений через сторонние источники — это «пиратство».</p>
+
+      <p><strong>2.</strong> Вы покупаете личный сертификат. Ещё раз подчеркнем, вы покупаете личный сертификат разработчика Apple — это позволит вам установить дополнительное программное обеспечение на ваш iPhone.</p>
+
+      <p><strong>3.</strong> Сертификат может попасть на более длительное время регистрации.</p>
+
+      <p><strong>3.1</strong> Если у вас долго регистрируется сертификат, то мы не виноваты в этом и не будем вам ничего заменять и возвращать деньги. В этом случае вам придется только ждать.</p>
+
+      <p><strong>4.</strong> У нас нет никогда и никаких возвратов средств. Если у вас слетел сертификат, то его восстановят по гарантии, а не вернут деньги. Если сертификат полностью исправен, но у вас не получается повторить за инструкциями по причинам, которые никак не относятся к сертификату, мы также не несем ответственность за это.</p>
+
+      <p><strong>4.1</strong> Мы также не обязаны вас консультировать и обслуживать, если сертификат полностью исправен, но вы например не можете верно установить новый ТикТок или другие приложения. Мы в первую очередь продаем сертификаты, а не установку ТикТока. Мы и так выдаем очень подробную инструкцию и всю нужную информацию, которая поможет вам устанавливать нужные программы.</p>
+
+      <p><strong>5.</strong> Сертификат могут отозвать в любой момент. Если ваш сертификат отозвали, то мы можем предоставить вам скидку 50% на новый обычный сертификат.</p>
+
+      <p><strong>5.1</strong> Почему Apple отзывает сертификат? Потому что мы нарушаем (в соответствии с разделом 3.2) условия и соглашения Apple. И именно поэтому сертификаты отзываются. Мы не официальный магазин и не можем им являться. Мы продаем виртуальные товары. Мы не относимся никак к правилам, которые устанавливаются на официальные маркетплейсы, биржи и прочие магазины. Поэтому мы вправе отклонятся от пользовательского соглашения в тех или иных случаях. Apple могут отозвать ваш сертификат в любой момент, и вы должны это понимать. Мы не несем ответственность за ваш сертификат.</p>
+
+      <p><strong>6.</strong> Вы автоматически принимаете условия данного соглашения, когда приобретаете у нас сертификат.</p>
+
+      <p><strong>7.</strong> Если до покупки у вас уже был сертификат и он был отозван, но вы не упомянули об этом продавцу, то в таком случае никакой замены делать не будем!</p>
+
+      <p><strong>8.</strong> Мы никак не влияем на скорость регистрации вашего сертификата, этим занимаются Apple, мы не знаем точную дату готовности вашего сертификата, регулярно заходите в бота и проверяйте статус готовности сами!</p>
+
+      <p>С уважением <strong>@bbarne77</strong></p>
+    `
+}
+};
+
+// Функция для инициализации пошаговой навигации
+function setupStepNavigation() {
+    const steps = infoModal.querySelectorAll('.step');
+    let currentStep = 0;
+
+    function showStep(stepIndex) {
+        steps.forEach((step, index) => {
+            if (index === stepIndex) {
+                step.classList.remove('hidden');
+            } else {
+                step.classList.add('hidden');
+            }
+        });
+    }
+
+    // Добавляем обработчик событий на всё модальное окно, чтобы ловить клики по кнопкам
+    infoModal.addEventListener('click', (e) => {
+        if (e.target.classList.contains('next-step-btn')) {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        } else if (e.target.classList.contains('prev-step-btn')) {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        } else if (e.target.classList.contains('close-modal-btn')) {
+            infoModal.classList.remove('active');
+            // При закрытии сбрасываем шаг на первый
+            currentStep = 0;
+            showStep(currentStep);
+        }
+    });
+
+    // Показываем первый шаг при открытии
+    showStep(currentStep);
+}
+
+
+// Функция для отображения модального окна
+function showModal(title, text, infoKey) {
+    infoModalTitle.innerHTML = title;
+    infoModalText.innerHTML = text;
+    infoModal.classList.add('active');
+    infoModal.setAttribute('aria-hidden', 'false');
+
+    // Если это модальное окно с инструкцией по сертификату, запускаем пошаговую навигацию
+    if (infoKey === 'get-certificate') {
+        setupStepNavigation();
+    }
+}
+
+// Обработчик для кнопки с вопросом
+helpBubble.addEventListener('click', () => {
+    helpMenu.classList.toggle('show');
+});
+
+// Обработчик для кнопок в меню помощи
+helpMenuButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const infoKey = button.getAttribute('data-info');
+        console.log(`Нажата кнопка с data-info: ${infoKey}`);
+        if (infoContent[infoKey]) {
+            showModal(infoContent[infoKey].title, infoContent[infoKey].text, infoKey);
+            helpMenu.classList.remove('show');
+        } else {
+            console.error(`Ошибка: Для ключа "${infoKey}" не найдено данных в infoContent.`);
+        }
+    });
+});
+
+// Обработчик для закрытия модального окна с информацией
+if (infoModalCloseBtn) {
+    infoModalCloseBtn.addEventListener('click', () => {
+        infoModal.classList.remove('active');
+        infoModal.setAttribute('aria-hidden', 'true');
+    });
+}
+
+// Скрываем модальное окно при клике вне его
+window.addEventListener('click', (event) => {
+    if (event.target === infoModal) {
+        infoModal.classList.remove('active');
+        infoModal.setAttribute('aria-hidden', 'true');
+    }
+});
+
+// Скрываем меню, если кликнуть где-либо еще
+document.addEventListener('click', (event) => {
+    const isClickInsideMenu = helpMenu.contains(event.target);
+    const isClickOnButton = helpBubble.contains(event.target);
+    if (!isClickInsideMenu && !isClickOnButton && helpMenu.classList.contains('show')) {
+        helpMenu.classList.remove('show');
+    }
+});
+
+
+// Логика кнопок покупки — работает и без модального окна
+const buyButtons = document.querySelectorAll('.card-btn');
+const buyModal = document.getElementById('buyModal');
+
+if (buyModal) {
+    const buyModalTitle = buyModal.querySelector('.modal-title');
+    const buyModalDescription = buyModal.querySelector('.modal-description');
+    const buyModalCloseBtn = buyModal.querySelector('.close-btn');
+    const buyModalCancelBtn = buyModal.querySelector('.cancel-btn');
+    const confirmBtn = buyModal.querySelector('.confirm-btn');
+
+    buyButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const title = button.getAttribute('data-title') || 'Сертификат';
+            const description = button.getAttribute('data-description') || '';
+            const link = button.getAttribute('data-link') || '#';
+            if (buyModalTitle) buyModalTitle.textContent = title;
+            if (buyModalDescription) buyModalDescription.textContent = description;
+            if (confirmBtn) confirmBtn.href = link;
+            buyModal.classList.add('active');
+        });
+    });
+
+    if (buyModalCloseBtn) buyModalCloseBtn.addEventListener('click', () => buyModal.classList.remove('active'));
+    if (buyModalCancelBtn) buyModalCancelBtn.addEventListener('click', () => buyModal.classList.remove('active'));
+    window.addEventListener('click', (e) => {
+        if (e.target === buyModal) buyModal.classList.remove('active');
+    });
+} else {
+    // Если модального окна покупки нет, кнопка сразу открывает Telegram-ссылку
+    buyButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const link = button.getAttribute('data-link');
+            if (link) {
+                e.preventDefault();
+                window.open(link, '_blank', 'noopener,noreferrer');
+            }
+        });
+    });
+}
+
+// Условия гарантии
+const warrantyButtons = document.querySelectorAll('.warranty-open-btn, #openWarrantyBtn');
+warrantyButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const c = infoContent['warranty'];
+        if (c && infoModal) {
+            showModal(c.title, c.text, 'warranty');
+        }
+    });
+});
