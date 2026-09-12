@@ -518,3 +518,71 @@ body.modal-open{overflow:hidden;}
   .desktop-nav a:first-child{padding-left:2px}
   .desktop-nav a:hover,.warranty-header-btn:hover{color:#fff}
 }
+
+/* v56 — compact mobile hamburger navigation */
+.mobile-menu-toggle{display:none}
+.mobile-menu{display:none}
+@media (max-width:700px), (max-device-width:700px){
+  .site-header{height:64px !important; overflow:visible !important; position:relative; z-index:1000}
+  .header-content{height:64px !important; display:flex !important; align-items:center !important; justify-content:space-between !important; padding:0 14px !important}
+  .brand{display:flex; align-items:center; min-width:0; grid-column:auto; grid-row:auto}
+  .logo-img{width:31px;height:31px}
+  .logo-text{font-size:16px}
+  .brand-sub{font-size:8px}
+  .site-header .telegram-top{display:none !important}
+  .desktop-nav{display:none !important}
+  .mobile-menu-toggle{display:flex !important; width:44px; height:44px; flex:0 0 44px; border:1px solid rgba(255,255,255,.11); border-radius:13px; background:rgba(10,18,31,.78); box-shadow:0 8px 24px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.04); align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; padding:0; -webkit-tap-highlight-color:transparent}
+  .mobile-menu-toggle span{display:block;width:18px;height:1.7px;border-radius:2px;background:#dbe8fb;transition:transform .25s ease,opacity .2s ease,width .25s ease}
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.7px) rotate(45deg)}
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;width:0}
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.7px) rotate(-45deg)}
+  .mobile-menu{position:absolute;left:0;right:0;top:64px;display:block;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity .22s ease,transform .22s ease,visibility .22s ease; padding:0 14px 14px}
+  .mobile-menu.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+  .mobile-menu-panel{background:rgba(7,14,25,.97);border:1px solid rgba(104,159,255,.16);border-radius:18px;padding:8px;box-shadow:0 18px 50px rgba(0,0,0,.48),0 0 35px rgba(38,125,255,.09);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+  .mobile-menu-panel a,.mobile-menu-warranty{width:100%;min-height:49px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 14px;border:0;border-bottom:1px solid rgba(255,255,255,.055);background:transparent;color:#dbe6f7;text-decoration:none;font:inherit;font-size:14px;font-weight:600;text-align:left;cursor:pointer}
+  .mobile-menu-panel a:last-child,.mobile-menu-warranty{border-bottom:0}
+  .mobile-menu-panel a span,.mobile-menu-warranty span{color:#6ea7ff;font-size:17px;transition:transform .2s ease}
+  .mobile-menu-panel a:active,.mobile-menu-warranty:active{background:rgba(71,139,255,.08);border-radius:10px}
+  body.mobile-menu-open{overflow:hidden}
+}
+
+
+/* v57 — follow the phone / browser system appearance automatically */
+@media (prefers-color-scheme: light){
+  html{color-scheme:light}
+  body{color:#142033;background:#f4f7fb}
+  .site-header{background:rgba(248,250,253,.82);border-bottom-color:rgba(25,45,75,.10);box-shadow:0 4px 24px rgba(35,55,85,.05)}
+  .logo-text{color:#152238}.brand-sub{color:#708096}
+  .desktop-nav{color:#52637a}.desktop-nav a:hover,.warranty-header-btn:hover{color:#142033}
+  .telegram-top,.primary-btn{box-shadow:0 8px 28px rgba(13,105,255,.20)}
+  .eyebrow{background:#eaf2ff;border-color:rgba(37,121,240,.18);color:#45617f}
+  .hero h1{color:#142033}.hero h1 span{color:#086cf2}.hero-lead{color:#62728a}
+  .hero-feature{color:#52637a}.hero-feature b{background:linear-gradient(145deg,#e9f2ff,#f8fbff);border-color:rgba(52,130,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 8px 24px rgba(15,103,255,.08)}
+  .secondary-btn{background:#fff;border-color:rgba(42,67,100,.14);color:#2c3c52;box-shadow:0 8px 24px rgba(35,55,85,.05)}
+  .bg-glow-1{opacity:.10}.bg-glow-2{opacity:.07}
+  .section-heading h2,.section-heading p,.reviews-heading h2{color:#152238}
+  .section-heading p,.reviews-heading p{color:#68788e}
+  .certificate-card,.benefit,.step,.review,.faq-item,.telegram-card,.footer-card{background:rgba(255,255,255,.82);border-color:rgba(42,67,100,.12);box-shadow:0 14px 40px rgba(35,55,85,.06)}
+  .certificate-card:hover,.benefit:hover,.faq-item:hover{border-color:rgba(37,121,240,.24);box-shadow:0 18px 45px rgba(35,90,170,.10)}
+  .certificate-card h3,.benefit h3,.step h3,.review-name,.faq-question,.telegram-card h3{color:#17253a}
+  .certificate-card p,.benefit p,.step p,.review-text,.faq-answer,.telegram-card p{color:#65758b}
+  .price,.price-value{color:#142033}
+  .muted,.card-note,.section-kicker{color:#718197}
+  .review-meta{color:#8290a3}
+  .reviews-marquee:before,.reviews-marquee:after{background:linear-gradient(90deg,#f4f7fb,transparent)}
+  .footer{background:#edf2f8;border-top-color:rgba(42,67,100,.10)}
+  .footer-nav,.footer-copy{color:#6a7a90}
+  .mobile-menu-toggle{background:rgba(255,255,255,.9);border-color:rgba(42,67,100,.15);box-shadow:0 8px 24px rgba(35,55,85,.10),inset 0 1px 0 rgba(255,255,255,.9)}
+  .mobile-menu-toggle span{background:#263950}
+  .mobile-menu-panel{background:rgba(250,252,255,.98);border-color:rgba(37,121,240,.16);box-shadow:0 18px 50px rgba(35,55,85,.16)}
+  .mobile-menu-panel a,.mobile-menu-warranty{color:#23344b;border-bottom-color:rgba(42,67,100,.08)}
+  .mobile-menu-panel a span,.mobile-menu-warranty span{color:#1674ef}
+  .modal,.info-modal{background:rgba(220,228,239,.72)}
+  .modal-content,.info-modal-content{background:#fff;border-color:rgba(42,67,100,.14);box-shadow:0 30px 90px rgba(35,55,85,.20)}
+  .modal-title,.info-modal-content h3{color:#17253a}.modal-description,.info-modal-content div{color:#66768b}
+  .modal-info{color:#748399}.close-btn,.info-modal-close-btn{color:#7a899d}
+  .modal-btn{background:#eef4fb;border-color:rgba(42,67,100,.12);color:#30435a}.confirm-btn{color:#fff;background:#1678ff;border-color:#1678ff}
+  .buy-modal-note{background:#f0f6ff;border-color:rgba(37,121,240,.13);color:#50637c}
+  .buy-modal-secure{color:#708198}
+  .certificate-plate{box-shadow:0 28px 70px rgba(30,55,90,.25),0 0 42px rgba(24,111,255,.10)}
+}

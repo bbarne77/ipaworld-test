@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#05080d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f8fc" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#050a12">
   <title>iPAWORLD — Сертификаты Apple</title>
   <link rel="icon" href="https://raw.githubusercontent.com/viibbee/Info/main/IMG_5409.PNG">
@@ -22,6 +25,9 @@
           <div class="brand-sub">Сертификаты Apple</div>
         </div>
       </a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="desktop-nav">
         <a href="#certificates" onclick="switchMode('certs', 'certificates'); return false;">Сертификаты</a>
         <a href="#vpn" onclick="switchMode('vpn'); return false;">VPN</a>
@@ -30,6 +36,15 @@
         <button type="button" class="warranty-header-btn warranty-open-btn">Условия гарантии</button>
       </nav>
       <a class="telegram-top" href="https://t.me/bbarne77" target="_blank" rel="noopener">➤&nbsp; Написать в Telegram</a>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-panel">
+        <a href="#certificates" onclick="switchMode('certs', 'certificates'); closeMobileMenu(); return false;">Сертификаты <span>→</span></a>
+        <a href="#vpn" onclick="switchMode('vpn'); closeMobileMenu(); return false;">VPN <span>→</span></a>
+        <a href="#faq" onclick="switchMode('certs', 'faq'); closeMobileMenu(); return false;">FAQ <span>→</span></a>
+        <a href="#reviews" onclick="switchMode('certs', 'reviews'); closeMobileMenu(); return false;">Отзывы <span>→</span></a>
+        <button type="button" class="mobile-menu-warranty warranty-open-btn" onclick="closeMobileMenu();">Условия гарантии <span>→</span></button>
+      </div>
     </div>
   </header>
 

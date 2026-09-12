@@ -342,3 +342,31 @@ window.addEventListener('click', (e) => {
     apply();
     window.addEventListener('resize', apply, {passive:true});
 })();
+
+// v56 — mobile hamburger menu
+(function(){
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+    window.closeMobileMenu = function(){
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden','true');
+        toggle.setAttribute('aria-expanded','false');
+        document.body.classList.remove('mobile-menu-open');
+    };
+    toggle.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        const open = !menu.classList.contains('open');
+        if (open){
+            menu.classList.add('open');
+            menu.setAttribute('aria-hidden','false');
+            toggle.setAttribute('aria-expanded','true');
+            document.body.classList.add('mobile-menu-open');
+        } else window.closeMobileMenu();
+    });
+    document.addEventListener('click', function(e){
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) window.closeMobileMenu();
+    });
+    window.addEventListener('keydown', function(e){ if (e.key === 'Escape') window.closeMobileMenu(); });
+})();
