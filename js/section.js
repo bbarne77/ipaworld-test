@@ -254,7 +254,9 @@ if (buyModal) {
             if (buyModalDescription) buyModalDescription.textContent = description;
             if (buyModalIcon) {
                 const iconType = title.toLowerCase();
-                buyModalIcon.innerHTML = iconType.includes('парн')
+                buyModalIcon.innerHTML = iconType.includes('vpn')
+                    ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 5 5v6c0 5 3.1 9.2 7 11 3.9-1.8 7-6 7-11V5l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>'
+                    : iconType.includes('парн')
                     ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM15.5 12.5a3.5 3.5 0 1 0 0-7"/><path d="M2.8 21a5.7 5.7 0 0 1 11.4 0M14 16.2a5.1 5.1 0 0 1 7.2 4.6"/></svg>'
                     : iconType.includes('ipad')
                     ? '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 18h4"/></svg>'
