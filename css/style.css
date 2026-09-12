@@ -984,3 +984,38 @@ body.modal-open{overflow:hidden;}
   .review p,.reviews-row .review p{font-size:13px!important;line-height:1.55!important}
   .faq-list details p{font-size:12px!important}
 }
+
+/* v71 — tighter review cards + larger readable text */
+.row-two .review{width:max-content!important;flex-basis:auto!important;min-width:220px!important;max-width:340px!important;min-height:0!important}
+.row-two .review p{min-height:0!important}
+.product-desc{font-size:15px!important;line-height:1.55!important}
+.product-card ul{font-size:14px!important;line-height:1.55!important}
+.benefit p{font-size:14px!important;line-height:1.5!important}
+.step-item small{font-size:12px!important}
+.help-card p{font-size:12px!important;line-height:1.55!important}
+.footer-brand small{font-size:11px!important}
+.footer-nav{font-size:12px!important}
+.footer-bottom{font-size:11px!important}
+.faq-list details p{font-size:14px!important;line-height:1.6!important}
+.warranty-text{font-size:14px!important;line-height:1.65!important}
+.reviews-row .review p{font-size:15px!important;line-height:1.6!important}
+.reviews-row .review-top b{font-size:14px!important}
+.reviews-row .review-top small{font-size:11px!important}
+.app-tags span{font-size:11px!important}
+@media(max-width:700px),(max-device-width:700px){
+  .product-desc{font-size:16px!important}
+  .product-card ul{font-size:15px!important;line-height:1.6!important}
+  .benefit p{font-size:15px!important}
+  .step-item small{font-size:13px!important}
+  .help-card p{font-size:13px!important}
+  .footer-brand small{font-size:12px!important}
+  .footer-nav{font-size:13px!important}
+  .footer-bottom{font-size:12px!important}
+  .faq-list details p{font-size:15px!important;line-height:1.65!important}
+  .warranty-text{font-size:15px!important;line-height:1.7!important}
+  .reviews-row .review p{font-size:15px!important;line-height:1.6!important}
+  .reviews-row .review-top b{font-size:15px!important}
+  .reviews-row .review-top small{font-size:12px!important}
+  .app-tags span{font-size:12px!important}
+  .row-two .review{min-width:210px!important;max-width:calc(100vw - 54px)!important}
+}
