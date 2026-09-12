@@ -449,3 +449,72 @@ body.modal-open{overflow:hidden;}
   .reviews-row .review{width:270px;flex-basis:270px}
   .footer-inner{width:calc(100% - 28px);flex-direction:column;align-items:center;text-align:center}
 }
+
+/* v55 — mobile navigation: two compact rows, no clipping */
+@media (max-width:700px), (max-device-width:700px){
+  .site-header{
+    height:104px !important;
+    overflow:hidden;
+  }
+  .header-content{
+    width:100% !important;
+    max-width:none !important;
+    height:104px !important;
+    margin:0 !important;
+    display:grid !important;
+    grid-template-columns:1fr auto !important;
+    grid-template-rows:60px 44px !important;
+    gap:0 !important;
+    padding:0 14px !important;
+  }
+  .brand{grid-column:1;grid-row:1;min-width:0;}
+  .logo-img{width:30px;height:30px}
+  .logo-text{font-size:16px}
+  .brand-sub{font-size:8px}
+
+  /* compact Telegram button in the top row */
+  .site-header .telegram-top{
+    display:inline-flex !important;
+    grid-column:2;
+    grid-row:1;
+    align-self:center;
+    justify-self:end;
+    margin:0 !important;
+    padding:9px 13px !important;
+    border-radius:999px;
+    font-size:10px !important;
+    white-space:nowrap;
+  }
+
+  /* navigation gets its own horizontal row */
+  .desktop-nav{
+    display:flex !important;
+    grid-column:1 / -1;
+    grid-row:2;
+    width:calc(100% + 28px);
+    margin-left:-14px;
+    height:44px;
+    align-items:center;
+    justify-content:flex-start;
+    gap:0 !important;
+    padding:0 14px 1px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    white-space:nowrap;
+    border-top:1px solid rgba(255,255,255,.045);
+  }
+  .desktop-nav::-webkit-scrollbar{display:none}
+  .desktop-nav a,.warranty-header-btn{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    height:32px;
+    padding:0 11px;
+    font-size:11px !important;
+    color:#aebbd0;
+  }
+  .desktop-nav a:first-child{padding-left:2px}
+  .desktop-nav a:hover,.warranty-header-btn:hover{color:#fff}
+}
