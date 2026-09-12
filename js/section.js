@@ -399,3 +399,67 @@ window.addEventListener('click', (e) => {
     row.dataset.duplicated = '1';
   });
 })();
+
+// v75 — robust iPhone/iOS review roulette. CSS percentage animations can
+// occasionally disappear as a large composited layer, so move the rows with
+// requestAnimationFrame and reset at the exact width of one review set.
+(function(){
+  const rows = Array.from(document.querySelectorAll('.reviews-row'));
+  if (!rows.length) return;
+  const SPEEDS = [0.018, 0.015]; // px per ms; deliberately slow
+  const states = [];
+
+  function measure(row, state){
+    const count = row.children.length;
+    if (!count) return;
+    const setCount = Math.floor(count / 3);
+    if (!setCount) return;
+    const first = row.children[0];
+    const cycleEnd = row.children[setCount - 1];
+    if (!first || !cycleEnd) return;
+    const firstRect = first.getBoundingClientRect();
+    const endRect = cycleEnd.getBoundingClientRect();
+    const gap = parseFloat(getComputedStyle(row).columnGap || getComputedStyle(row).gap || '0') || 0;
+    state.cycle = (endRect.right - firstRect.left) + gap;
+    state.width = row.scrollWidth;
+    if (!state.cycle || !isFinite(state.cycle)) state.cycle = row.scrollWidth / 3;
+  }
+
+  rows.forEach(function(row, index){
+    // The v65 duplication already creates exactly three sets. If another
+    // script has not duplicated yet, wait for the next frame rather than
+    // starting with a wrong width.
+    const state = {row, x: index === 1 ? 0 : 0, last: performance.now(), cycle:0};
+    measure(row, state);
+    states.push(state);
+  });
+
+  function tick(now){
+    states.forEach(function(state, index){
+      measure(state.row, state);
+      if (!state.cycle) return;
+      const dt = Math.min(50, Math.max(0, now - state.last));
+      state.last = now;
+      const speed = SPEEDS[index] || SPEEDS[0];
+      if (index === 0){
+        state.x -= speed * dt;
+        if (state.x <= -state.cycle) state.x += state.cycle;
+      } else {
+        state.x += speed * dt;
+        if (state.x >= 0) state.x -= state.cycle;
+      }
+      state.row.style.transform = 'translate3d(' + state.x.toFixed(3) + 'px,0,0)';
+    });
+    requestAnimationFrame(tick);
+  }
+
+  // Re-measure after layout/duplication is complete.
+  requestAnimationFrame(function(){
+    states.forEach(function(state){ measure(state.row,state); state.last=performance.now(); });
+    requestAnimationFrame(tick);
+  });
+
+  window.addEventListener('resize', function(){
+    states.forEach(function(state){ measure(state.row,state); });
+  }, {passive:true});
+})();

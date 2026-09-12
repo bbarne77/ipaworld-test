@@ -1114,3 +1114,17 @@ body.modal-open{overflow:hidden;}
   }
   .reviews-row .review p{font-size:15px!important;line-height:1.55!important}
 }
+
+/* v75 — iOS-safe review roulette: JS-driven, no disappearing marquee layers */
+.reviews-marquee{overflow:hidden!important;contain:layout paint!important}
+.reviews-row{
+  animation:none!important;
+  will-change:transform;
+  transform:translate3d(0,0,0);
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+.reviews-row .review{flex:0 0 285px!important;width:285px!important;min-width:285px!important;max-width:285px!important;height:220px!important;min-height:220px!important;box-sizing:border-box!important}
+@media(max-width:700px),(max-device-width:700px){
+  .reviews-row .review{flex:0 0 285px!important;width:285px!important;min-width:285px!important;max-width:285px!important;height:220px!important;min-height:220px!important}
+}
