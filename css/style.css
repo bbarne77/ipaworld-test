@@ -826,3 +826,135 @@ body.modal-open{overflow:hidden;}
 /* Never trigger the flip from hover alone; click/tap controls it. */
 .certificate-hitbox:hover .certificate-plate,
 .certificate-hitbox:hover.is-flipped .certificate-plate{transition:transform .95s cubic-bezier(.16,.8,.2,1),box-shadow .95s ease;}
+
+/* v66 — hero buttons aligned and identical typography */
+.hero-actions .primary-btn,
+.hero-actions .secondary-btn{
+  height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1.2;
+  font-size:12px;
+  font-weight:750;
+  white-space:nowrap;
+}
+.hero-actions .primary-btn{padding:0 25px}
+.hero-actions .secondary-btn{padding:0 22px}
+@media (max-width:700px), (max-device-width:700px){
+  .hero-actions .primary-btn,
+  .hero-actions .secondary-btn{
+    height:44px;
+    font-size:11px;
+  }
+  .hero-actions .primary-btn{padding:0 17px}
+  .hero-actions .secondary-btn{padding:0 17px}
+}
+
+
+/* v67 — polished automatic light theme */
+@media (prefers-color-scheme: light){
+  :root{color-scheme:light}
+  html,body{background:#f5f8fc!important;color:#17263b!important}
+  body{
+    background:
+      radial-gradient(650px 380px at 78% 8%,rgba(42,133,255,.10),transparent 68%),
+      radial-gradient(520px 360px at 5% 42%,rgba(91,154,255,.07),transparent 70%),
+      linear-gradient(180deg,#f9fbff 0%,#f4f7fb 48%,#eef3f8 100%)!important;
+  }
+  .bg-glow-1{background:#4d9cff!important;opacity:.08!important}
+  .bg-glow-2{background:#6aaeff!important;opacity:.05!important}
+
+  /* Header */
+  .site-header{background:rgba(249,251,255,.86)!important;border-bottom:1px solid rgba(28,53,84,.09)!important;box-shadow:0 8px 30px rgba(38,66,99,.07)!important}
+  .logo-text{color:#14243a!important}.brand-sub{color:#718198!important}
+  .desktop-nav{color:#52647b!important}.desktop-nav a:hover,.warranty-header-btn:hover{color:#116eea!important}
+  .warranty-header-btn{color:#52647b!important}
+  .mobile-menu-toggle{background:#ffffff!important;border-color:rgba(34,62,94,.14)!important;box-shadow:0 8px 24px rgba(31,61,96,.10)!important}
+  .mobile-menu-toggle span{background:#263950!important}
+  .mobile-menu-panel{background:rgba(255,255,255,.97)!important;border-color:rgba(38,111,224,.14)!important;box-shadow:0 20px 55px rgba(29,58,91,.16)!important}
+  .mobile-menu-panel a,.mobile-menu-warranty{color:#24364d!important;border-bottom-color:rgba(28,53,84,.07)!important}
+  .mobile-menu-panel a span,.mobile-menu-warranty span{color:#1978f5!important}
+
+  /* Hero */
+  .hero h1{color:#13243a!important;text-shadow:none!important}
+  .hero h1 span{color:#0874f7!important}
+  .hero-lead{color:#63748a!important}
+  .eyebrow{background:rgba(232,242,255,.9)!important;color:#3e5f83!important;border-color:rgba(31,119,240,.18)!important;box-shadow:0 5px 20px rgba(39,119,225,.06)!important}
+  .hero-feature{color:#53667d!important}
+  .hero-feature b{background:linear-gradient(145deg,#edf6ff,#e3efff)!important;border-color:rgba(37,121,240,.18)!important;color:#1677f4!important;box-shadow:0 8px 22px rgba(30,113,225,.08)!important}
+  .secondary-btn{background:#fff!important;color:#24364d!important;border-color:rgba(31,61,94,.14)!important;box-shadow:0 8px 22px rgba(34,63,96,.06)!important}
+  .secondary-btn:hover{background:#f5f9ff!important;border-color:rgba(31,119,240,.28)!important;color:#126fe8!important}
+  .primary-btn{color:#fff!important}
+
+  /* Section headings */
+  .section-heading h2,.reviews-heading h2{color:#14253b!important}
+  .section-heading p,.reviews-heading p{color:#6c7d92!important}
+
+  /* Certificate cards */
+  .cards-grid.certs .product-card,
+  .product-card{
+    background:linear-gradient(145deg,#ffffff 0%,#f7faff 100%)!important;
+    color:#17263b!important;
+    border:1px solid rgba(33,66,103,.12)!important;
+    box-shadow:0 14px 38px rgba(37,65,96,.08),inset 0 1px 0 rgba(255,255,255,.95)!important;
+  }
+  .product-card:hover{border-color:rgba(35,121,239,.34)!important;box-shadow:0 20px 46px rgba(34,75,120,.11)!important}
+  .product-card.featured{border-color:rgba(22,116,242,.55)!important;box-shadow:0 16px 45px rgba(28,115,235,.13)!important}
+  .product-card h3{color:#17263b!important;text-shadow:none!important}
+  .product-desc{color:#62748a!important}
+  .product-card ul,.product-card li{color:#566a81!important}
+  .product-card li:before{color:#1d7af3!important}
+  .price{color:#14263e!important}
+  .product-icon{background:linear-gradient(145deg,#eef7ff,#e4f0ff)!important;color:#1478f5!important;border-color:rgba(41,125,240,.18)!important}
+  .product-icon.purple,.icon-super{background:linear-gradient(145deg,#f3ecff,#ebe1ff)!important;color:#7640d5!important;border-color:rgba(118,64,213,.16)!important}
+  .popular{background:linear-gradient(135deg,#268aff,#0869f1)!important;color:#fff!important;box-shadow:0 6px 18px rgba(18,108,239,.18)!important}
+  .card-btn{background:linear-gradient(135deg,#edf5ff,#e7f1ff)!important;color:#126fdc!important;border-color:rgba(30,119,239,.17)!important}
+  .card-btn:hover{background:linear-gradient(135deg,#2589ff,#0864ee)!important;color:#fff!important}
+
+  /* Benefits */
+  .benefits{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(244,248,253,.98))!important;color:#17263b!important;border-color:rgba(33,66,103,.10)!important;box-shadow:0 18px 55px rgba(37,65,96,.07)!important}
+  .benefit{border-right-color:rgba(33,66,103,.08)!important}
+  .benefit h3{color:#17263b!important}.benefit p{color:#64768c!important}
+  .benefit-icon{background:linear-gradient(145deg,#eef7ff,#e5f0ff)!important;color:#1779f3!important;border-color:rgba(39,126,240,.18)!important}
+  .step-item b{color:#1a2b42!important}.step-item small{color:#718198!important}
+  .step-item>span{background:#edf6ff!important;color:#1678f5!important;border-color:rgba(24,120,255,.3)!important}
+  .steps i{color:#7ba8d9!important}
+  .help-card{background:linear-gradient(145deg,#edf7ff,#e8f2fd)!important;border-color:rgba(42,125,240,.18)!important;box-shadow:0 12px 30px rgba(34,93,155,.06)!important}
+  .help-card b{color:#18304c!important}.help-card p{color:#65788f!important}
+
+  /* Reviews */
+  .reviews-row .review,.review{background:linear-gradient(145deg,#ffffff,#f6f9fd)!important;color:#17263b!important;border-color:rgba(34,67,103,.11)!important;box-shadow:0 12px 32px rgba(37,65,96,.07)!important}
+  .reviews-row .review p,.review p,.review-text{color:#586c83!important}
+  .reviews-row .review-top b,.review-name,.review-top b{color:#1a2b42!important}
+  .reviews-row .review-top small,.review-meta{color:#8391a3!important}
+  .app-tags span{background:#edf5ff!important;border-color:rgba(39,126,240,.14)!important;color:#2775c9!important}
+  .reviews-marquee:before{background:linear-gradient(90deg,#f5f8fc 10%,rgba(245,248,252,0))!important}
+  .reviews-marquee:after{background:linear-gradient(270deg,#f5f8fc 10%,rgba(245,248,252,0))!important}
+
+  /* FAQ */
+  .faq-list details,.faq-item{background:rgba(255,255,255,.94)!important;color:#23364e!important;border-color:rgba(34,67,103,.11)!important;box-shadow:0 8px 25px rgba(35,64,96,.045)!important}
+  .faq-list summary,.faq-question{color:#20344c!important}
+  .faq-list details p,.faq-answer{color:#60748b!important}
+  .faq-buy-btn{background:#edf5ff!important;color:#176fd2!important;border-color:rgba(37,121,240,.17)!important}
+
+  /* Footer */
+  .site-footer{background:rgba(235,241,248,.82)!important;border-top-color:rgba(34,64,97,.09)!important}
+  .footer-brand b{color:#17263b!important}.footer-brand small{color:#718198!important}
+  .footer-nav,.footer-warranty-btn{color:#60748b!important}.footer-nav a:hover,.footer-warranty-btn:hover{color:#1473eb!important}
+  .footer-bottom{color:#718095!important;border-top-color:rgba(34,64,97,.08)!important}
+
+  /* Warranty / purchase modals */
+  .modal,.info-modal{background:rgba(35,53,75,.30)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important}
+  .modal-content,.info-modal-content,.warranty-modal-content{background:linear-gradient(145deg,#ffffff,#f7faff)!important;color:#51657d!important;border-color:rgba(34,67,103,.12)!important;box-shadow:0 25px 80px rgba(20,42,70,.22)!important}
+  .warranty-text,.warranty-text p,.warranty-text li{color:#5b6e84!important}
+  .warranty-text strong{color:#182a41!important}.warranty-text em{color:#347bd1!important}.warranty-text a{color:#176fd2!important}
+}
+
+/* v68 — slightly slower review roulette */
+.row-one{animation-duration:46s !important}
+.row-two{animation-duration:50s !important}
+@media(max-width:700px), (max-device-width:700px){
+  .row-one{animation-duration:36s !important}
+  .row-two{animation-duration:40s !important}
+}
