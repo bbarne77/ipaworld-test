@@ -388,11 +388,14 @@ window.addEventListener('click', (e) => {
     if (row.dataset.duplicated === '1') return;
     const items = Array.from(row.children);
     if (!items.length) return;
-    items.forEach(function(item){
-      const clone = item.cloneNode(true);
-      clone.setAttribute('aria-hidden','true');
-      row.appendChild(clone);
-    });
+    // Build three complete sets so the marquee never reaches a blank gap.
+    for (let set = 1; set < 3; set++) {
+      items.forEach(function(item){
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden','true');
+        row.appendChild(clone);
+      });
+    }
     row.dataset.duplicated = '1';
   });
 })();
