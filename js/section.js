@@ -370,3 +370,29 @@ window.addEventListener('click', (e) => {
     });
     window.addEventListener('keydown', function(e){ if (e.key === 'Escape') window.closeMobileMenu(); });
 })();
+
+// v65 — reliable certificate click flip (no sticky hover flip)
+(function(){
+  const hitbox = document.querySelector('.certificate-hitbox');
+  if (!hitbox) return;
+  hitbox.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    hitbox.classList.toggle('is-flipped');
+  }, {passive:false});
+})();
+
+// v65 — duplicate review rows for a truly seamless infinite marquee
+(function(){
+  document.querySelectorAll('.reviews-row').forEach(function(row){
+    if (row.dataset.duplicated === '1') return;
+    const items = Array.from(row.children);
+    if (!items.length) return;
+    items.forEach(function(item){
+      const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden','true');
+      row.appendChild(clone);
+    });
+    row.dataset.duplicated = '1';
+  });
+})();
