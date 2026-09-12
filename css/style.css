@@ -1054,3 +1054,63 @@ body.modal-open{overflow:hidden;}
   .faq-list summary,.faq-question{font-size:17px!important;line-height:1.4!important}
   .faq-list details p,.faq-answer{font-size:18px!important;line-height:1.72!important}
 }
+
+/* v74 — balanced mobile typography + uniform review cards */
+/* Reviews: return to the compact, uniform-card feel of v63. */
+.reviews-row .review{
+  width:290px!important;
+  flex:0 0 290px!important;
+  min-height:210px!important;
+  height:210px!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+}
+.reviews-row .review p{
+  min-height:0!important;
+  height:auto!important;
+  overflow:hidden!important;
+}
+.row-two .review{
+  width:290px!important;
+  flex:0 0 290px!important;
+  min-width:290px!important;
+  max-width:290px!important;
+  min-height:210px!important;
+  height:210px!important;
+}
+
+/* Keep the requested content readable without making it oversized. */
+.benefit h3{font-size:16px!important;line-height:1.3!important}
+.benefit p{font-size:15px!important;line-height:1.52!important;max-width:200px!important}
+.how-main .section-heading h2{font-size:25px!important;line-height:1.2!important}
+.how-main .section-heading p{font-size:16px!important;line-height:1.55!important}
+.step-item b{font-size:14px!important;line-height:1.35!important}
+.step-item small{font-size:13px!important;line-height:1.5!important}
+.faq-list summary,.faq-question{font-size:15px!important;line-height:1.4!important}
+.faq-list details p,.faq-answer{font-size:15px!important;line-height:1.6!important}
+
+@media(max-width:700px),(max-device-width:700px){
+  /* Balanced mobile sizes — comfortable to read, but still visually compact. */
+  .benefit h3{font-size:17px!important;line-height:1.3!important}
+  .benefit p{font-size:16px!important;line-height:1.55!important;max-width:none!important}
+  .how-main .section-heading h2{font-size:25px!important;line-height:1.2!important}
+  .how-main .section-heading p{font-size:17px!important;line-height:1.55!important}
+  .step-item b{font-size:15px!important;line-height:1.35!important}
+  .step-item small{font-size:14px!important;line-height:1.5!important}
+  .faq-list summary,.faq-question{font-size:16px!important;line-height:1.4!important}
+  .faq-list details p,.faq-answer{font-size:16px!important;line-height:1.62!important}
+
+  /* Same review card dimensions in both marquee rows, like the earlier layout. */
+  .reviews-row .review,
+  .row-two .review{
+    width:285px!important;
+    flex:0 0 285px!important;
+    min-width:285px!important;
+    max-width:285px!important;
+    min-height:220px!important;
+    height:220px!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+  }
+  .reviews-row .review p{font-size:15px!important;line-height:1.55!important}
+}
