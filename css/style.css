@@ -21,7 +21,7 @@
 .reviews-carousel:hover .reviews-track{animation-play-state:paused}.reviews-track{will-change:transform}
 .reviews-track .review{width:235px;flex:0 0 235px}
 @keyframes reviewsRoulette{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 5px))}}
-@media(max-width:700px){
+@media(max-width:700px), (max-device-width:700px){
   .reviews-track .review{width:calc(86vw);flex-basis:calc(86vw)}
   .reviews-track{gap:9px;animation-duration:20s}
   .reviews-carousel:before,.reviews-carousel:after{width:25px}
@@ -59,7 +59,7 @@
 .reviews-row .review:nth-child(8n+3){border-color:rgba(34,181,140,.22)}
 .reviews-row .review:nth-child(8n+4){border-color:rgba(255,166,45,.18)}
 .reviews-section .faq-block{max-width:900px;margin:42px auto 0}
-@media(max-width:700px){
+@media(max-width:700px), (max-device-width:700px){
   .reviews-heading h2{font-size:25px}
   .reviews-marquee{width:calc(100% + 32px);margin-left:-16px}
   .reviews-row .review{width:285px;flex-basis:285px;min-height:200px}
@@ -95,7 +95,7 @@
 @keyframes reviewRowLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes reviewRowRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .reviews-section .faq-block{max-width:900px;margin:42px auto 0}
-@media(max-width:700px){.reviews-heading h2{font-size:25px}.reviews-marquee{width:calc(100% + 32px);margin-left:-16px}.reviews-row .review{width:285px;flex-basis:285px;min-height:200px}.reviews-row{gap:10px;margin-bottom:10px}.reviews-marquee:before,.reviews-marquee:after{width:38px}.row-one{animation-duration:30s}.row-two{animation-duration:34s}}
+@media(max-width:700px), (max-device-width:700px){.reviews-heading h2{font-size:25px}.reviews-marquee{width:calc(100% + 32px);margin-left:-16px}.reviews-row .review{width:285px;flex-basis:285px;min-height:200px}.reviews-row{gap:10px;margin-bottom:10px}.reviews-marquee:before,.reviews-marquee:after{width:38px}.row-one{animation-duration:30s}.row-two{animation-duration:34s}}
 
 /* Условия гарантии */
 .footer-warranty-btn{appearance:none;border:0;background:none;color:#8190a3;font:inherit;font-size:9px;cursor:pointer;padding:0;transition:.2s}
@@ -107,7 +107,7 @@
 .warranty-text li{margin:4px 0}
 .warranty-text strong{color:#f2f6fb}
 .warranty-text em{color:#8ebcff}
-@media(max-width:700px){.footer-nav{flex-wrap:wrap;justify-content:center;gap:15px}.footer-warranty-btn{font-size:10px}.warranty-modal-content{padding:22px 18px}.warranty-text{font-size:12px;line-height:1.5;max-height:70vh}}
+@media(max-width:700px), (max-device-width:700px){.footer-nav{flex-wrap:wrap;justify-content:center;gap:15px}.footer-warranty-btn{font-size:10px}.warranty-modal-content{padding:22px 18px}.warranty-text{font-size:12px;line-height:1.5;max-height:70vh}}
 
 /* v12 — warranty button beside reviews */
 .reviews-heading-top{display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -116,13 +116,13 @@
 .reviews-warranty-btn span{color:#65aaff;font-size:14px;transition:.22s}
 .reviews-warranty-btn:hover{border-color:rgba(62,139,255,.7);transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,92,255,.18)}
 .reviews-warranty-btn:hover span{transform:translateX(3px)}
-@media(max-width:700px){.reviews-heading-top{align-items:flex-start;flex-direction:column;gap:12px}.reviews-warranty-btn{font-size:10px;padding:9px 14px}}
+@media(max-width:700px), (max-device-width:700px){.reviews-heading-top{align-items:flex-start;flex-direction:column;gap:12px}.reviews-warranty-btn{font-size:10px;padding:9px 14px}}
 
 /* v13 — гарантия в верхнем меню */
 .warranty-header-btn{appearance:none;border:0;background:none;color:#aab7c8;font:inherit;font-size:12px;cursor:pointer;padding:0;transition:.2s;white-space:nowrap}
 .warranty-header-btn:hover{color:#fff}
 @media(max-width:900px){.header-content{gap:22px}.desktop-nav{gap:18px}.warranty-header-btn{font-size:11px}}
-@media(max-width:700px){.warranty-header-btn{font-size:10px}.desktop-nav{gap:13px}}
+@media(max-width:700px), (max-device-width:700px){.warranty-header-btn{font-size:10px}.desktop-nav{gap:13px}}
 
 /* v15 — centered reviews heading */
 .reviews-heading{display:block;text-align:center;margin-bottom:22px}
@@ -140,12 +140,12 @@
 .vpn{padding:60px 0 90px;min-height:520px}
 .vpn-card{width:min(420px,100%);margin:32px auto 20px;padding:28px;border-radius:22px;background:linear-gradient(145deg,#111b29,#09101a);border:1px solid rgba(50,130,255,.3);box-shadow:0 20px 60px rgba(0,0,0,.35)}
 .vpn-card h3{font-size:22px;margin:12px 0 6px}.vpn-card>p{color:#94a4b8;font-size:13px;line-height:1.8}.vpn-card .price{font-size:28px;margin-top:20px}.vpn-back{display:flex;margin:12px auto}
-@media(max-width:700px){.desktop-nav{overflow-x:auto;max-width:100%;padding-bottom:2px}.desktop-nav a,.warranty-header-btn{font-size:10px}.vpn{padding-top:40px}}
+@media(max-width:700px), (max-device-width:700px){.desktop-nav{overflow-x:auto;max-width:100%;padding-bottom:2px}.desktop-nav a,.warranty-header-btn{font-size:10px}.vpn{padding-top:40px}}
 
 
 /* v17 — desktop visual scale +25% */
 @media(min-width:701px){html{zoom:1.25}}
-@media(max-width:700px){html{zoom:1}}
+@media(max-width:700px), (max-device-width:700px){html{zoom:1}}
 
 /* v25: fixed hover area prevents the card from jerking under the cursor */
 .certificate-hitbox{
@@ -208,7 +208,7 @@
 .certificate-back strong{font-size:19px;letter-spacing:.5px;}
 .certificate-back span{font-size:11px;color:#a5b7cd;}
 .certificate-back small{font-size:10px;color:#5fa7ff;}
-@media(max-width:700px){
+@media(max-width:700px), (max-device-width:700px){
   .certificate-hitbox{width:280px;height:185px;right:30px;top:120px;}
 }
 
@@ -250,7 +250,7 @@ body.modal-open{overflow:hidden;}
 .modal-info{font-size:10px}
 .modal-btn{font-size:11px}
 .info-modal-content div{font-size:12px}
-@media(max-width:700px){
+@media(max-width:700px), (max-device-width:700px){
   .eyebrow{font-size:12px}
   .hero-feature{font-size:12px}
   .section-heading p,.benefits .section-heading p{font-size:13px}
@@ -290,10 +290,162 @@ body.modal-open{overflow:hidden;}
 .buy-confirm-content .confirm-btn:hover{transform:translateY(-2px);box-shadow:0 14px 35px rgba(8,119,255,.34)}
 .buy-confirm-content .confirm-btn span{margin-left:7px;font-size:15px}
 .buy-modal-secure{margin-top:13px;color:#52667d;font-size:9px;letter-spacing:.1px}.buy-modal-secure span{color:#39a2ff;margin-right:5px}
-@media(max-width:700px){.buy-confirm-content{padding:26px 17px 19px;border-radius:24px}.buy-modal-orb{width:58px;height:58px;border-radius:17px}.buy-modal-icon svg{width:27px;height:27px}.buy-confirm-content .modal-title{font-size:23px;padding:0 22px}.buy-confirm-content .modal-description{font-size:13px}.buy-modal-note{font-size:11px}.buy-confirm-content .modal-info{font-size:10px}.buy-confirm-content .modal-btn{font-size:12px;padding:12px 10px}.buy-modal-kicker{font-size:9px}}
+@media(max-width:700px), (max-device-width:700px){.buy-confirm-content{padding:26px 17px 19px;border-radius:24px}.buy-modal-orb{width:58px;height:58px;border-radius:17px}.buy-modal-icon svg{width:27px;height:27px}.buy-confirm-content .modal-title{font-size:23px;padding:0 22px}.buy-confirm-content .modal-description{font-size:13px}.buy-modal-note{font-size:11px}.buy-confirm-content .modal-info{font-size:10px}.buy-confirm-content .modal-btn{font-size:12px;padding:12px 10px}.buy-modal-kicker{font-size:9px}}
 
 /* FAQ purchase CTA */
 .faq-list details .faq-buy-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin:0 12px 13px;padding:8px 14px;border:1px solid rgba(65,145,255,.42);border-radius:10px;background:linear-gradient(180deg,rgba(24,105,190,.18),rgba(10,31,55,.5));color:#8fc4ff;font-size:10px;font-weight:700;letter-spacing:.1px;text-decoration:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 6px 18px rgba(0,72,160,.1);transition:all .22s ease;}
 .faq-list details .faq-buy-btn span{font-size:13px;line-height:1;transition:transform .22s ease;}
 .faq-list details .faq-buy-btn:hover{border-color:rgba(79,157,255,.78);background:linear-gradient(180deg,rgba(27,121,222,.28),rgba(12,43,76,.68));color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 8px 24px rgba(0,96,220,.18);transform:translateY(-1px);}
 .faq-list details .faq-buy-btn:hover span{transform:translateX(3px);}
+
+
+/* v53 — mobile-first polish: compact header, single-column sections, safe spacing */
+@media (max-width:700px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  body{font-size:14px}
+  .container{width:calc(100% - 28px);max-width:none;margin-left:auto;margin-right:auto}
+
+  /* Header */
+  .site-header{height:62px}
+  .header-content{width:calc(100% - 28px);gap:0}
+  .brand{gap:8px;min-width:0}
+  .logo-img{width:29px;height:29px;border-radius:8px}
+  .logo-text{font-size:16px}
+  .brand-sub{font-size:8px}
+  .desktop-nav,.site-header .telegram-top{display:none}
+
+  /* Hero */
+  .hero{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:auto;padding:34px 0 10px}
+  .hero-copy{padding:0;text-align:center}
+  .eyebrow{font-size:11px;padding:7px 11px;margin-bottom:14px}
+  .hero h1{font-size:37px;line-height:1.04;letter-spacing:-1.8px}
+  .hero-lead{font-size:14px;line-height:1.55;max-width:330px;margin:15px auto 19px}
+  .hero-features{justify-content:center;gap:9px;margin-bottom:21px}
+  .hero-feature{gap:6px;font-size:10px;text-align:left}
+  .hero-feature b{width:34px;height:34px;flex-basis:34px;border-radius:10px;font-size:17px}
+  .hero-feature-icon svg{width:19px;height:19px}
+  .hero-actions{justify-content:center;flex-wrap:wrap;gap:9px}
+  .primary-btn,.secondary-btn{font-size:11px;padding:12px 17px}
+  .hero-art{height:315px;width:100%;margin-top:6px;overflow:hidden}
+  .ring-a{width:330px;height:165px}
+  .ring-b{width:320px;height:145px}
+  .device{width:215px;height:280px;border-radius:23px}
+  .device-back{right:50%;top:23px;transform:translateX(47%) rotate(-10deg);opacity:.82}
+  .certificate-hitbox{width:270px;height:178px;right:50%;top:93px;transform:translateX(50%);animation:certificateFloatMobile 7s ease-in-out infinite}
+  .certificate-hitbox:hover{animation-play-state:paused}
+  .certificate-plate{border-radius:19px}
+  .certificate-face{border-radius:19px}
+  .apple-mark{font-size:32px}
+  .cert-name{font-size:15px}
+  .cert-subtitle{font-size:8px}
+  .cert-seal{right:14px;bottom:12px;width:39px;height:39px}
+  .certificate-back img{width:52px;height:52px;border-radius:14px}
+  .certificate-back strong{font-size:17px}
+  .certificate-back span{font-size:10px}
+  .certificate-back small{font-size:9px}
+  .float-tag{padding:8px 10px;border-radius:11px;font-size:9px}
+  .float-tag span{font-size:8px}
+  .tag-iphone{top:28px;left:5px}
+  .tag-ipad{right:3px;bottom:42px}
+  .art-caption{display:none}
+  @keyframes certificateFloatMobile{
+    0%,100%{transform:translate3d(50%,0,0) rotate(0deg)}
+    25%{transform:translate3d(calc(50% + 2px),-3px,0) rotate(.6deg)}
+    50%{transform:translate3d(calc(50% - 2px),-5px,0) rotate(-.7deg)}
+    75%{transform:translate3d(calc(50% - 3px),-2px,0) rotate(.45deg)}
+  }
+
+  /* Certificates */
+  .pricing{padding:20px 0 28px}
+  .section-heading.center{padding:0 2px}
+  .section-heading h2,.benefits .section-heading h2{font-size:25px;letter-spacing:-.6px}
+  .section-heading p,.benefits .section-heading p{font-size:12px;line-height:1.55}
+  .cards-grid.certs{grid-template-columns:1fr;gap:11px;margin-top:19px}
+  .product-card{min-height:0;padding:17px 16px 15px;border-radius:17px}
+  .product-icon{width:42px;height:42px;border-radius:12px;font-size:21px;margin-bottom:10px}
+  .product-icon svg{width:21px;height:21px}
+  .product-card h3{font-size:17px}
+  .product-desc{font-size:11px;line-height:1.45;min-height:0;margin:4px 0 11px}
+  .product-card ul{font-size:11px;gap:6px;line-height:1.35}
+  .price{font-size:23px;padding:15px 0 10px}
+  .card-btn{font-size:12px;padding:11px}
+  .popular{font-size:9px;right:11px;top:11px}
+
+  /* Benefits */
+  .benefits{padding:22px 16px 20px;border-radius:18px}
+  .benefit-grid{grid-template-columns:1fr;gap:0;margin-top:17px}
+  .benefit{display:grid;grid-template-columns:48px 1fr;column-gap:12px;row-gap:0;align-items:center;padding:13px 0;min-height:0;border-right:0;border-bottom:1px solid rgba(122,163,213,.08)}
+  .benefit:last-child{border-bottom:0}
+  .benefit-icon{grid-row:span 2;width:48px;height:48px;margin:0;border-radius:12px;font-size:21px}
+  .benefit h3{font-size:15px;line-height:1.2}
+  .benefit p{font-size:11px;line-height:1.42;max-width:none;margin-top:4px}
+
+  /* How-to */
+  .how{display:flex;flex-direction:column;gap:18px;padding:27px 0 32px;align-items:stretch}
+  .how-main .section-heading{text-align:center}
+  .steps{display:flex;flex-direction:column;align-items:stretch;gap:0;margin-top:18px}
+  .step-item{gap:12px;padding:10px 0}
+  .step-item>span{width:43px;height:43px;flex:0 0 43px;font-size:13px}
+  .step-item b{font-size:13px}
+  .step-item small{font-size:10px;display:block;margin-top:2px}
+  .steps i{display:block;text-align:center;transform:rotate(90deg);height:15px;line-height:15px}
+  .help-card{padding:17px;border-radius:17px}
+  .help-card b{font-size:13px}
+  .help-card p{font-size:11px;line-height:1.45}
+  .help-card a{font-size:11px;padding:10px}
+
+  /* Reviews + FAQ */
+  .social{display:block;padding-bottom:30px}
+  .reviews-section{padding-bottom:30px}
+  .reviews-heading{margin-bottom:17px}
+  .reviews-heading h2{font-size:25px;letter-spacing:-.6px}
+  .reviews-heading p{font-size:12px;line-height:1.5;max-width:330px}
+  .reviews-marquee{width:calc(100% + 28px);margin-left:-14px;padding:2px 0 7px}
+  .reviews-row .review{width:270px;flex-basis:270px;min-height:185px;padding:16px;border-radius:16px}
+  .reviews-row{gap:9px;margin-bottom:9px}
+  .reviews-row .avatar{width:37px;height:37px;font-size:14px}
+  .reviews-row .review-top b{font-size:12px}
+  .reviews-row .stars{font-size:12px;margin:9px 0 8px}
+  .reviews-row .review p{font-size:11px;line-height:1.5;min-height:0}
+  .outline-btn{font-size:11px;padding:10px 15px;margin-top:10px}
+  .faq-block{margin-top:34px!important}
+  .faq-list{gap:7px;margin-top:14px}
+  .faq-list details{border-radius:12px}
+  .faq-list summary{padding:12px 13px;font-size:12px;line-height:1.35;gap:10px}
+  .faq-list details p{padding:0 13px 11px;font-size:11px;line-height:1.5}
+  .faq-list details .faq-buy-btn{margin:0 13px 13px;padding:9px 13px;font-size:11px;border-radius:10px}
+
+  /* Footer */
+  .footer-inner{width:calc(100% - 28px);padding:20px 0;min-height:0;display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center}
+  .footer-brand{justify-content:center}
+  .footer-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:13px 18px;margin:0;font-size:10px}
+  .footer-warranty-btn{font-size:10px}
+  .footer-inner>.telegram-top{display:inline-flex;margin:0;font-size:11px;padding:10px 16px}
+  .footer-bottom{width:calc(100% - 28px);padding:12px 0 16px;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;font-size:9px;line-height:1.4}
+
+  /* Modals */
+  .modal,.info-modal{padding:14px}
+  .modal-content,.info-modal-content{max-width:100%;border-radius:20px}
+  .warranty-modal-content{padding:20px 16px}
+  .warranty-text{font-size:11px;line-height:1.55}
+}
+
+/* v54 — hard mobile fallback for iOS/embedded browsers that expose a desktop layout viewport */
+.mobile-device body{width:100%;max-width:100%;overflow-x:hidden}
+@media(min-width:701px) and (max-device-width:700px){
+  html{zoom:1 !important}
+  .desktop-nav,.site-header .telegram-top{display:none !important}
+  .container{width:calc(100% - 28px);max-width:none;margin-left:auto;margin-right:auto}
+  .header-content{width:calc(100% - 28px);gap:0}
+  .site-header{height:62px}
+  .hero{display:flex;flex-direction:column;align-items:stretch;min-height:auto;padding:34px 0 10px}
+  .hero-copy{padding:0;text-align:center}
+  .hero-art{height:315px;width:100%;margin-top:6px;overflow:hidden}
+  .cards-grid.certs{grid-template-columns:1fr !important;gap:11px}
+  .benefit-grid{grid-template-columns:1fr !important}
+  .how{display:flex;flex-direction:column;gap:18px;align-items:stretch}
+  .social{display:block}
+  .reviews-marquee{width:calc(100% + 28px);margin-left:-14px;overflow:hidden}
+  .reviews-row .review{width:270px;flex-basis:270px}
+  .footer-inner{width:calc(100% - 28px);flex-direction:column;align-items:center;text-align:center}
+}

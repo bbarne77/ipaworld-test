@@ -332,3 +332,13 @@ window.addEventListener('keydown', (e) => {
 window.addEventListener('click', (e) => {
     if (e.target === infoModal) closeInfoModal();
 });
+
+// iPAWORLD mobile viewport safeguard
+(function(){
+    const isSmallDevice = () => window.screen && Math.min(window.screen.width || 9999, window.screen.height || 9999) <= 700;
+    const apply = () => {
+        if (isSmallDevice()) document.documentElement.classList.add('mobile-device');
+    };
+    apply();
+    window.addEventListener('resize', apply, {passive:true});
+})();
