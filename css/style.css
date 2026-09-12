@@ -1019,3 +1019,38 @@ body.modal-open{overflow:hidden;}
   .app-tags span{font-size:12px!important}
   .row-two .review{min-width:210px!important;max-width:calc(100vw - 54px)!important}
 }
+
+/* v72 — review cards sized to content + readability for benefits/how/FAQ */
+.reviews-row{align-items:flex-start!important}
+.row-two .review{height:auto!important;align-self:flex-start!important;min-height:0!important;width:290px!important;flex:0 0 290px!important}
+.row-two .review p{min-height:0!important;height:auto!important}
+.benefit h3{font-size:16px!important;line-height:1.25!important}
+.benefit p{font-size:16px!important;line-height:1.55!important;max-width:190px!important}
+.how-main .section-heading p{font-size:16px!important;line-height:1.55!important}
+.step-item b{font-size:14px!important}
+.step-item small{font-size:13px!important;line-height:1.45!important}
+.faq-list summary,.faq-question{font-size:15px!important}
+.faq-list details p,.faq-answer{font-size:16px!important;line-height:1.65!important}
+@media(max-width:700px),(max-device-width:700px){
+  .row-two .review{width:285px!important;flex-basis:285px!important;min-width:285px!important;max-width:285px!important}
+  .benefit h3{font-size:18px!important}
+  .benefit p{font-size:17px!important;line-height:1.6!important;max-width:none!important}
+  .how-main .section-heading p{font-size:18px!important;line-height:1.6!important}
+  .step-item b{font-size:15px!important}
+  .step-item small{font-size:14px!important;line-height:1.5!important}
+  .faq-list summary,.faq-question{font-size:16px!important}
+  .faq-list details p,.faq-answer{font-size:17px!important;line-height:1.7!important}
+}
+
+/* v73 — mobile-first readability: benefits / installation / FAQ */
+@media (max-width:700px),(max-device-width:700px){
+  /* Keep certificate cards unchanged; enlarge only the requested content blocks. */
+  .benefit h3{font-size:19px!important;line-height:1.28!important}
+  .benefit p{font-size:18px!important;line-height:1.62!important;max-width:none!important;letter-spacing:.05px!important}
+  .how-main .section-heading h2{font-size:26px!important;line-height:1.18!important}
+  .how-main .section-heading p{font-size:19px!important;line-height:1.62!important}
+  .step-item b{font-size:16px!important;line-height:1.35!important}
+  .step-item small{font-size:15px!important;line-height:1.55!important}
+  .faq-list summary,.faq-question{font-size:17px!important;line-height:1.4!important}
+  .faq-list details p,.faq-answer{font-size:18px!important;line-height:1.72!important}
+}
