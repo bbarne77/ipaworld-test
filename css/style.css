@@ -952,9 +952,9 @@ body.modal-open{overflow:hidden;}
 }
 
 /* v68 — slightly slower review roulette */
-.row-one{animation-duration:46s !important}
-.row-two{animation-duration:50s !important}
+.row-one{animation-duration:68s !important}
+.row-two{animation-duration:74s !important}
 @media(max-width:700px), (max-device-width:700px){
-  .row-one{animation-duration:36s !important}
-  .row-two{animation-duration:40s !important}
+  .row-one{animation-duration:56s !important}
+  .row-two{animation-duration:62s !important}
 }
